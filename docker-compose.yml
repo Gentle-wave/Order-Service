@@ -43,4 +43,4 @@ services:
       - "3200:3100"
 
 volumes:
-  mongodb_data:
+  order_mongodb_data:
