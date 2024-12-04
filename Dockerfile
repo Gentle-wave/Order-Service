@@ -6,7 +6,7 @@ WORKDIR /src
 
 # Install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm install -g npm@latest
 
 # Copy the rest of the application code
 COPY . .
@@ -22,7 +22,7 @@ WORKDIR /src
 
 # Install production dependencies only
 COPY package*.json ./
-RUN npm install --production
+RUN npm install --omit=dev
 
 # Copy compiled JavaScript files and other required assets
 COPY --from=build /src/dist ./dist
