@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Create a production image
-FROM node:18 as production
+FROM node:18 AS production
 
 # Set the working directory
 WORKDIR /src
