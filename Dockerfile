@@ -1,5 +1,5 @@
 # 1: Build the application
-FROM node:18 as build
+FROM node:18 AS build
 
 # Set the working directory
 WORKDIR /src
@@ -13,6 +13,9 @@ COPY . .
 
 # Compile TypeScript to JavaScript
 RUN npm run build
+
+# Verify the dist folder
+RUN ls -la /src/dist
 
 # Stage 2: Create a production image
 FROM node:18 AS production
